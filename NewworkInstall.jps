@@ -2,6 +2,7 @@
     "type": "install",
     "id": "newworkinstall",
     "name": "Newwork Install",
+    "baseUrl":"raw.githubusercontent.com/retseltony/jelastic-manifests/master/",
     "settings": {
         "fields": [
         {
@@ -27,28 +28,29 @@
             "type": "string",
             "inputType": "password",
             "required": true
-        }, {}]
+        },{
+          "name": "aut_token",
+          "caption": "Token",
+          "type": "string",
+          "inputType": "password",
+          "required": true
+      }, {}]
     },
-    "actions": {
-      "mainAction": {
-        "log": "Newwork Install"
+    "actions": {      
+      "mainAction": {        
+        "log": "${globals.repoUrl}api-gateway/api-gateway.jps"
       },
-      "preConfigureAction":{
-        "isSequencial":true,
-        "cmd": [
-          "cd /var/www/webroot/ROOT/wp-content/plugins/",
-          "ACCESS_TOKEN=$(curl  -X POST 'https://wcSFWVNFCXVFAXrQbE:Fq582paCHpuUcrAdNAYU26qjeSCnfjmX@bitbucket.org/site/oauth2/access_token' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'grant_type=client_credentials' | jq '.access_token')",
-          "curl -H \"Authorization: Bearer $ACCESS_TOKEN\"  \"https://bitbucket.org/new-work-team/jeslastic_market_place/get/latest.tar.gz\" --output  latest.tar.gz",
-          "mkdir new-work-team && tar -xvf latest.tar.gz --strip 1 -C ./new-work-team && ls && ls new-work-team/ "
-        ],
-        "log": "${cmd.response}",
-        "setGlobals":{
-          "filesDir":"/var/www/webroot/ROOT/wp-content/plugins/new-work-team"
-        }       
+      "installApiGateway":{
+            "install":"${globals.repoUrl}api-gateway/api-gateway.jps"
       }
     },
     "onInstall": [
-      "preConfigureAction",
+      {
+        "setGlobals":{
+          "repoUrl":"https://${settings.aut_token}@${this.baseUrl}"
+        }
+      },
+      "installApiGateway",
       "mainAction"
     ]
 }
