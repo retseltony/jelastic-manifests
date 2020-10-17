@@ -1,56 +1,39 @@
-{
-    "type": "install",
-    "id": "newworkinstall",
-    "name": "Newwork Install",
-    "baseUrl":"raw.githubusercontent.com/retseltony/jelastic-manifests/master/",
-    "settings": {
-        "fields": [
-        {
-            "name": "tenant",
-            "caption": "Tenant",
-            "type": "string",
-            "required": true
-        }, 
-        {
-            "name": "registry",
-            "caption": "Registry URL",
-            "type": "string",
-            "default": "eu.gcr.io",
-            "required": true
-        }, {
-            "name": "reg_user",
-            "caption": "User",
-            "type": "string",
-            "required": true
-        }, {
-            "name": "reg_pass",
-            "caption": "Password",
-            "type": "string",
-            "inputType": "password",
-            "required": true
-        },{
-          "name": "aut_token",
-          "caption": "Token",
-          "type": "string",
-          "inputType": "password",
-          "required": true
-      }, {}]
-    },
-    "actions": {      
-      "mainAction": {        
-        "log": "${globals.repoUrl}api-gateway/api-gateway.jps"
-      },
-      "installApiGateway":{
-            "install":"${globals.repoUrl}api-gateway/api-gateway.jps"
-      }
-    },
-    "onInstall": [
-      {
-        "setGlobals":{
-          "repoUrl":"https://${settings.aut_token}@${this.baseUrl}"
-        }
-      },
-      "installApiGateway",
-      "mainAction"
-    ]
-}
+type: install
+id: newworkinstall
+name: Newwork Install
+baseUrl: raw.githubusercontent.com/retseltony/jelastic-manifests/master/
+settings:
+  fields:
+  - name: tenant
+    caption: Tenant
+    type: string
+    required: true
+  - name: registry
+    caption: Registry URL
+    type: string
+    default: eu.gcr.io
+    required: true
+  - name: reg_user
+    caption: User
+    type: string
+    required: true
+  - name: reg_pass
+    caption: Password
+    type: string
+    inputType: password
+    required: true
+  - name: aut_token
+    caption: Token
+    type: string
+    inputType: password
+    required: true
+actions:
+  mainAction:
+    log: "${globals.repoUrl}api-gateway/api-gateway.jps"
+  installApiGateway:
+    install: "${globals.repoUrl}api-gateway/api-gateway.jps"
+onInstall:
+  - setGlobals:
+      repoUrl: https://${settings.aut_token}@${baseUrl}
+  - installApiGateway
+  - mainAction
