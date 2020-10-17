@@ -5,7 +5,7 @@
   "description":{
      "text":"Instaling Api gateway of newwork"
   },
-  "id":"newwork-api-gateway",
+  "id":"newwork-api-gateway",  
   "engine":"",
   "log":"Testin the env names ${settings.tenant}",  
   "name":"Newwork API-GATEWAY",
