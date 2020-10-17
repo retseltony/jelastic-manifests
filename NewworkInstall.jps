@@ -30,6 +30,7 @@ actions:
   installApiGateway:
     install: 
       - jps: "${baseUrl}api-gateway/api-gateway.json"
+        envName: "${globals.api-gateway-name}"
         loggerName: InstallApiGateway
 onInstall:
   - log: ${baseUrl}api-gateway/api-gateway.json

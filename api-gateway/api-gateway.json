@@ -7,8 +7,7 @@
   },
   "id":"newwork-api-gateway",
   "engine":"",
-  "log":"Testin the env names ${settings.tenant}",
-  "envName":"${globals.api-gateway-name}",
+  "log":"Testin the env names ${settings.tenant}",  
   "name":"Newwork API-GATEWAY",
   "nodes":[
      {
