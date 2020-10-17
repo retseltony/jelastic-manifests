@@ -89,11 +89,10 @@
            },
            "image":"gaia-222517/newwork-kong:2.0.0-alpine",           
            "registry": {
-               "url":"${settings.url}",
+               "url": "${settings.url}",
                "user": "${settings.user}",
                "password": "${settings.reg_pass}"
-           }
-           
+           }   
         },        
         "nodeGroup":"bl"
      }
