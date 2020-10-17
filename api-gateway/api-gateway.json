@@ -65,6 +65,7 @@
      {
         "cloudlets":16,
         "diskLimit":"102.4G",
+        "cmd":"echo 'estoy instalando kong'",
         "docker":{
            "cmd":"kong docker-start",
            "entrypoint":"/docker-entrypoint.sh",
@@ -87,11 +88,11 @@
               "KONG_SHA256":"5af1178111958b2e325c5b18690f4e7ddf064d28139ff38188b1e2e432ea99ff",
               "KONG_VERSION":"2.0.0"
            },
-           "image":"gaia-222517/newwork-kong:2.0.0-alpine",
+           "image":"gaia-222517/newwork-kong:2.0.0-alpine",           
            "registry":{
                "url":"${settings.url}",
                "user":"${settings.user}",
-               "password":"'${settings.reg_pass.fromBase64()}'"
+               "password":"'${settings.reg_pass}'"
             }
         },        
         "nodeGroup":"bl"
