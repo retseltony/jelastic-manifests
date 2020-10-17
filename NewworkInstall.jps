@@ -22,12 +22,9 @@ settings:
     type: string
     inputType: password
     required: true
-  - name: aut_token
-    caption: Token
-    type: string
-    inputType: password
-    required: true
 actions:
+  setGlobals:
+    api-gateway-name: "api-gateway-${settings.tenant}"
   mainAction:
     log: "${globals.repoUrl}api-gateway/api-gateway.json"
   installApiGateway:
