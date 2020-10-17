@@ -1,7 +1,7 @@
 type: install
 id: newworkinstall
 name: Newwork Install
-baseUrl: raw.githubusercontent.com/retseltony/jelastic-manifests/master/
+baseUrl: https://raw.githubusercontent.com/retseltony/jelastic-manifests/master/
 settings:
   fields:
   - name: tenant
@@ -29,11 +29,12 @@ settings:
     required: true
 actions:
   mainAction:
-    log: "${globals.repoUrl}api-gateway/api-gateway.jps"
+    log: "${globals.repoUrl}api-gateway/api-gateway.json"
   installApiGateway:
-    install: "${globals.repoUrl}api-gateway/api-gateway.jps"
+    install: 
+      - jps: "${baseUrl}api-gateway/api-gateway.json"
+        loggerName: InstallApiGateway
 onInstall:
-  - setGlobals:
-      repoUrl: https://${settings.aut_token}@${baseUrl}
+  - log: ${baseUrl}api-gateway/api-gateway.json
   - installApiGateway
   - mainAction
