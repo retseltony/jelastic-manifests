@@ -33,7 +33,7 @@ actions:
         settings: 
           url: ${settings.registry}
           user: ${settings.reg_user}
-          password: ${settings.reg_pass}
+          reg_pass: ${settings.reg_pass}
 onInstall:
   - setGlobals:
       api-gateway-name: api-gateway-${settings.tenant}
