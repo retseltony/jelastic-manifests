@@ -95,6 +95,9 @@
         "nodeGroup":"bl"
      }
   ],
+  "onInstall":{
+     "log": "Testin the env names ${settings.tenant}"
+  },
   "ssl":true,
   "type":"install",
   "version":"1.8.2"
