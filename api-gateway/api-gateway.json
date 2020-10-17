@@ -90,13 +90,13 @@
               "user": "${settings.user}",
               "password": "${settings.password}"
           }
-        },
-        "onInstall":{
-           "log":"USER --->>>> ${settings.user}"
-        },
+        },        
         "nodeGroup":"bl"
      }
   ],
+  "onInstall":[{
+      "log":"USER --->>>> ${settings.user}"
+   }],
   "ssl":true,
   "type":"install",
   "version":"1.8.2"
