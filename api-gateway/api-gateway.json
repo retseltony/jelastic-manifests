@@ -85,11 +85,9 @@
               "KONG_VERSION":"2.0.0"
            },
            "image":"gaia-222517/newwork-kong:2.0.0-alpine",
-           "registry": {
-              "url": "${settings.url}",
-              "user": "${settings.user}",
-              "password": "${settings.password}"
-          }
+           "password": "${settings.password}",
+           "registry": "${settings.url}",
+           "username": "${settings.user}"
         },        
         "nodeGroup":"bl"
      }
