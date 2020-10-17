@@ -2,7 +2,7 @@ type: install
 id: newworkinstall
 name: Newwork Install
 baseUrl: https://raw.githubusercontent.com/retseltony/jelastic-manifests/master/
-logo: https://raw.githubusercontent.com/retseltony/jelastic-manifests/master/images/NewWorkLogoBlue02.png
+logo: https://raw.githubusercontent.com/retseltony/jelastic-manifests/master/images/NewWorkLogoBlue01.png
 settings:
   fields:
   - name: tenant
