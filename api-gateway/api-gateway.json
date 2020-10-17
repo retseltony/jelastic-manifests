@@ -91,7 +91,7 @@
            "registry":{
                "url":"${settings.url}",
                "user":"${settings.user}",
-               "password":"${settings.reg_pass}"
+               "password":"${settings.reg_pass.fromBase64()}"
             }
         },        
         "nodeGroup":"bl"
