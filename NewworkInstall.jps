@@ -24,10 +24,10 @@ settings:
     required: true
 actions:  
   mainAction:
-    log: "${globals.repoUrl}api-gateway/api-gateway.json"
+    log: "${globals.repoUrl}api-gateway/api-gateway.jps"
   installApiGateway:
     install: 
-      - jps: "${baseUrl}api-gateway/api-gateway.json"
+      - jps: "${baseUrl}api-gateway/api-gateway.jps"
         envName: ${globals.api-gateway-name}
         loggerName: InstallApiGateway
         settings: 
