@@ -12,6 +12,9 @@
   "ssl":true,
   "type":"install",
   "version":"1.8.2",
+  "onBeforeAddNode":[{
+      "log":"USER --->>>> ${event.params.nodeType}"
+   }],
   "nodes":[
      {
         "cloudlets":16,
@@ -65,7 +68,6 @@
      {
         "cloudlets":16,
         "diskLimit":"102.4G",
-        "cmd":"echo 'estoy instalando kong'",
         "docker":{
            "cmd":"kong docker-start",
            "entrypoint":"/docker-entrypoint.sh",
@@ -97,7 +99,7 @@
         },        
         "nodeGroup":"bl"
      }
-  ],
+  ],  
   "onInstall":[{
       "log":"USER --->>>> ${settings.user}"
    }]  
