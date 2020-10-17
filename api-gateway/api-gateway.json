@@ -14,7 +14,7 @@
   "version":"1.8.2",
   "onBeforeAddNode":[{
       "log":"USER --->>>> ${event.params.nodeType}"
-   }],
+  }],
   "nodes":[
      {
         "cloudlets":16,
@@ -99,8 +99,8 @@
         },        
         "nodeGroup":"bl"
      }
-  ],  
+  ],
   "onInstall":[{
       "log":"USER --->>>> ${settings.user}"
-   }]  
+   }]
 }
