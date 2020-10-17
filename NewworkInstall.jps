@@ -22,17 +22,21 @@ settings:
     type: string
     inputType: password
     required: true
-actions:
-  setGlobals:
-    api-gateway-name: "api-gateway-${settings.tenant}"
+actions:  
   mainAction:
     log: "${globals.repoUrl}api-gateway/api-gateway.json"
   installApiGateway:
     install: 
       - jps: "${baseUrl}api-gateway/api-gateway.json"
-        envName: "${globals.api-gateway-name}"
+        envName: ${globals.api-gateway-name}
         loggerName: InstallApiGateway
+        settings: 
+          - url: ${settings.registry},
+          - user: ${settings.reg_user},
+          - password": ${settings.reg_pass}
 onInstall:
+  - setGlobals:
+      api-gateway-name: api-gateway-${settings.tenant}
   - log: ${baseUrl}api-gateway/api-gateway.json
   - installApiGateway
   - mainAction
