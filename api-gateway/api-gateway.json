@@ -9,6 +9,9 @@
   "engine":"",
   "log":"Testin the env names ${settings.tenant}",  
   "name":"Newwork API-GATEWAY",
+  "ssl":true,
+  "type":"install",
+  "version":"1.8.2",
   "nodes":[
      {
         "cloudlets":16,
@@ -94,8 +97,5 @@
   ],
   "onInstall":[{
       "log":"USER --->>>> ${settings.user}"
-   }],
-  "ssl":true,
-  "type":"install",
-  "version":"1.8.2"
+   }]  
 }
