@@ -11,10 +11,7 @@
   "name":"Newwork API-GATEWAY",
   "ssl":true,
   "type":"install",
-  "version":"1.8.2",
-  "onBeforeAddNode":[{
-      "log":"USER --->>>> ${event.params.nodeType}"
-  }],
+  "version":"1.8.2",  
   "nodes":[
      {
         "cloudlets":16,
@@ -94,7 +91,7 @@
            "registry":{
                "url":"${settings.url}",
                "user":"${settings.user}",
-               "password":"'${settings.reg_pass}'"
+               "password":"${settings.reg_pass.toJson()}"
             }
         },        
         "nodeGroup":"bl"
