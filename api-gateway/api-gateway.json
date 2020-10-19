@@ -8,7 +8,7 @@
   "id":"newwork-api-gateway",  
   "engine":"",
   "log":"Testin the env names ${settings.tenant}",  
-  "name":"Newwork API-GATEWAY",
+  "name":"${settings.tenat_name} API-GATEWAY",
   "ssl":true,
   "type":"install",
   "version":"1.8.2",  
