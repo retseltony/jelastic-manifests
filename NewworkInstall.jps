@@ -23,8 +23,8 @@ settings:
     type: string
     inputType: password
     required: true
-  - name: reg_pass
-    caption: Password
+  - name: kong_password
+    caption: Kong Password
     type: string
     inputType: password
     required: true
@@ -42,7 +42,7 @@ actions:
           user: ${settings.reg_user}
           reg_pass: ${settings.reg_pass}
           tenant_name: ${settings.tenant}
-          kong_password: ${globals.kong_password}
+          kong_password: ${settings.kong_password}
 onInstall:
   - setGlobals:
       - api-gateway-name: "api-gateway-${settings.tenant}" 

@@ -109,7 +109,7 @@
        ]
      },
      {
-        "log":["${globals.kongDbAddress}","${globals.kong_password}"]
+        "log":["${globals.kongDbAddress}","${settings.kong_password}"]
      },
      {
        "cmd [${globals.mId}]": "wget \"${baseUrl}scripts/execCmdScript.sh\" -O /var/lib/pgsql/script.sh 2>&1\nbash -x /var/lib/pgsql/script.sh master ${settings.kong_password} 1>> /var/log/run.log 2>> /var/log/run.log"
@@ -129,9 +129,7 @@
       }
     }]
  },
-  "onInstall":[{
-      "log":"USER --->>>> ${settings.user}"      
-   },
+  "onInstall":[
    "init",
    "adjust-env-vars"
    ]
