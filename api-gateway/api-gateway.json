@@ -102,7 +102,7 @@
              "setGlobals": {
                "mId": "${@i.id}",
                "mIP": "${@i.address}",
-               "kongDbAddress":"node${@i.id}-${env.domain}:5432"
+               "kongDbAddress":"node${@i.id}-${env.domain}"
              }
            }
          }
@@ -112,13 +112,13 @@
         "log":["${globals.kongDbAddress}","${settings.kong_password}"]
      },
      {
-       "cmd [${globals.mId}]": "wget \"${baseUrl}scripts/execCmdScript.sh\" -O /var/lib/pgsql/script.sh 2>&1\nbash -x /var/lib/pgsql/script.sh master ${settings.kong_password} 1>> /var/log/run.log 2>> /var/log/run.log"
+       "cmd [${globals.mId}]": "wget \"${baseUrl}scripts/execCmdScript.sh\" -O /var/lib/pgsql/script.sh 2>&1\nbash -x /var/lib/pgsql/script.sh ${settings.kong_password} 1>> /var/log/run.log 2>> /var/log/run.log"
      }
    ],
    "adjust-env-vars": [{
       "api[cp]": "env.control.AddContainerEnvVars",
       "vars": {
-         "DB_URI":"postgresql://kong:${settings.kong_password}@${globals.kongDbAddress}/konga_db",
+         "DB_URI":"postgresql://kong:${settings.kong_password}@${globals.kongDbAddress}:5432/konga_db",
          "KONGA_BASE_URL":"https://${env.domain}"
       }
     },{
