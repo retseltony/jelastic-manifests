@@ -121,7 +121,7 @@
    ]
  },
   "onInstall":[{
-      "log":"USER --->>>> ${settings.user}",
-      "init"
-   }]
+      "log":"USER --->>>> ${settings.user}"      
+   },
+   "init"]
 }
