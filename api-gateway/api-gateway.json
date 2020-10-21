@@ -127,6 +127,8 @@
          "KONG_PG_HOST":"${globals.kongDbAddress}",
          "KONG_PG_PASSWORD":"${settings.kong_password}"
       }
+    },{
+      "api [cp, bl]": "environment.control.RestartNodes"
     }]
  },
   "onInstall":[
