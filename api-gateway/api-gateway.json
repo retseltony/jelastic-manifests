@@ -120,7 +120,7 @@
    "adjust-env-vars": [{
       "api[cp]": "env.control.AddContainerEnvVars",
       "vars": {
-         "DB_URI":"postgresql://kong:${globals.kong_password}@${globals.kongDbAddress}/konga_db",
+         "DB_URI":"postgresql://kong:${settings.kong_password}@${globals.kongDbAddress}/konga_db",
          "KONGA_BASE_URL":"https://${env.domain}"
       }
     }]
