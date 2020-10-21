@@ -23,11 +23,16 @@ settings:
     type: string
     inputType: password
     required: true
+  - name: reg_pass
+    caption: Password
+    type: string
+    inputType: password
+    required: true
+    default: "4PoVBc+zs3FxI6+J6IQa7d8zJBFYF7qo0NGlcj+GOM0=" 
 actions:  
   mainAction:
     log: "${settings.tenant}"
-  installApiGateway:
-   
+  installApiGateway:   
     install: 
       - jps: "${baseUrl}api-gateway/api-gateway.json"
         envName: ${globals.api-gateway-name}
@@ -39,9 +44,9 @@ actions:
           tenant_name: ${settings.tenant}
           kong_password: ${globals.kong_password}
 onInstall:
-  - log: ${baseUrl}api-gateway/api-gateway.json
   - setGlobals:
-      - api-gateway-name: "api-gateway-${settings.tenant}"
-      - kong_password: "4PoVBc+zs3FxI6+J6IQa7d8zJBFYF7qo0NGlcj+GOM0=" 
+      - api-gateway-name: "api-gateway-${settings.tenant}" 
   - installApiGateway
   - mainAction
+  - log:
+      message: ${globals.kongDbAddress}
