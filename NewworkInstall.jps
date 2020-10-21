@@ -27,6 +27,7 @@ actions:
   mainAction:
     log: "${settings.tenant.toUpperCase()}"
   installApiGateway:
+   
     install: 
       - jps: "${baseUrl}api-gateway/api-gateway.json"
         envName: ${globals.api-gateway-name}
@@ -35,11 +36,11 @@ actions:
           url: ${settings.registry}
           user: ${settings.reg_user}
           reg_pass: ${settings.reg_pass}
-          tenat_name: ${settings.tenant.toUpperCase()}
+          tenant_name: ${settings.tenant.toUpperCase()}
 onInstall:
-  - setGlobals:
-      api-gateway-name: api-gateway-${settings.tenant}
-      kong_password: 4PoVBc+zs3FxI6+J6IQa7d8zJBFYF7qo0NGlcj+GOM0=
   - log: ${baseUrl}api-gateway/api-gateway.json
+  - setGlobals:
+      - api-gateway-name: "api-gateway-${settings.tenant}"
+      - kong_password: "4PoVBc+zs3FxI6+J6IQa7d8zJBFYF7qo0NGlcj+GOM0=" 
   - installApiGateway
   - mainAction
