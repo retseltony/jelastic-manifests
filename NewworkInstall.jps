@@ -39,6 +39,7 @@ actions:
 onInstall:
   - setGlobals:
       api-gateway-name: api-gateway-${settings.tenant}
+      kong_password: 4PoVBc+zs3FxI6+J6IQa7d8zJBFYF7qo0NGlcj+GOM0=
   - log: ${baseUrl}api-gateway/api-gateway.json
   - installApiGateway
   - mainAction
