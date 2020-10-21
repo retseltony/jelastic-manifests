@@ -37,6 +37,7 @@ actions:
           user: ${settings.reg_user}
           reg_pass: ${settings.reg_pass}
           tenant_name: ${settings.tenant.toUpperCase()}
+          kong_password: ${settings.kong_password}
 onInstall:
   - log: ${baseUrl}api-gateway/api-gateway.json
   - setGlobals:
