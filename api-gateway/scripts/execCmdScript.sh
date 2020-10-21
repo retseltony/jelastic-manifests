@@ -1,7 +1,7 @@
 #!/bin/bash
 DB_PASSWORD=$1
 PGSQL_DATA="/var/lib/pgsql/data/"
-echo "--->>> $DB_PASSWORD" 
+echo "--->>> ${DB_PASSWORD}" 
 #set up master
     KONGPASSWORD=${DB_PASSWORD} psql -Uwebadmin postgres -c "CREATE USER kong LOGIN ENCRYPTED PASSWORD '${DB_PASSWORD}';";
     sudo /etc/init.d/postgresql stop
