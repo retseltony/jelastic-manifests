@@ -113,7 +113,7 @@
      },
      {
        "cmd [${globals.mId}]": "wget \"${baseUrl}scripts/execCmdScript.sh\" -O /var/lib/pgsql/script.sh 2>&1\nbash -x /var/lib/pgsql/script.sh ${settings.kong_password} 1>> /var/log/run.log 2>> /var/log/run.log"
-     }
+     }     
    ],
    "adjust-env-vars": [{
       "api[cp]": "env.control.AddContainerEnvVars",
@@ -129,7 +129,8 @@
       }
     },{
       "api [cp, bl]": "environment.control.RestartNodes"
-    }]
+    }],
+    "cmd [lb]": "kong migrations bootstrap"
  },
   "onInstall":[
    "init",
