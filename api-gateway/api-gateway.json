@@ -135,7 +135,8 @@
          "api [bl]": [{
             "method": "environment.control.SetContainerRunCmd",
             "params":{
-               "data":"kong docker-start"
+               "data":"kong docker-start",
+               "nodeId":"${nodes.bl.id}"
             }
          },"environment.control.RestartNodes"]
       }

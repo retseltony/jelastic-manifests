@@ -18,6 +18,7 @@ settings:
     caption: User
     type: string
     required: true
+    default: _json_key
   - name: reg_pass
     caption: Password
     type: string
