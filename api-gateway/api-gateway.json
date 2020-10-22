@@ -133,7 +133,7 @@
     "setCommandKong":[
       {
          "api [bl]": [{
-            "method": "environment.Control.SetContainerRunCmd",
+            "method": "environment.control.SetContainerRunCmd",
             "params":{
                "data":"kong docker-start"
             }
