@@ -130,10 +130,19 @@
     },{
       "api [cp, bl]": "environment.control.RestartNodes"
     }],
-    "cmd [lb]": "kong migrations bootstrap"
+    "initKong":[
+      {
+         "cmd [lb]": [
+            "kong migrations bootstrap",
+            "echo 'migrating kong'"
+         ]
+      }
+    ]
+    
  },
   "onInstall":[
    "init",
-   "adjust-env-vars"
+   "adjust-env-vars",
+   "initKong"
    ]
 }
