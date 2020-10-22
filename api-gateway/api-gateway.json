@@ -142,6 +142,9 @@
          },"environment.control.RestartNodes"]
       },
       {
+         "sleep": "3000"
+      },
+      {
          "cmd [bl]":[
            "wget \"${baseUrl}scripts/registerKongaService.sh\" -O  /root/registerService.sh 2>&1\nsh -x  /root/registerService.sh docker${nodes.bl.id}-${env.domain} docker${nodes.cp.id}-${env.domain} 1>> /var/log/run.log 2>> /var/log/run.log"
          ]
