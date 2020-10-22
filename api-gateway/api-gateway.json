@@ -6,7 +6,7 @@
      "text":"Instaling Api gateway of newwork"
   },
   "id":"newwork-api-gateway",  
-  "baseUrl": "https://raw.githubusercontent.com/retseltony/jelastic-manifests/master/api-gateway",
+  "baseUrl": "https://raw.githubusercontent.com/retseltony/jelastic-manifests/master/api-gateway/",
   "engine":"",
   "log": "Testin the env names ${settings.tenant}",  
   "name": "${settings.tenant_name} API-GATEWAY",
