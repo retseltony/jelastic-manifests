@@ -64,7 +64,7 @@
         "cloudlets":16,
         "diskLimit":"102.4G",
         "docker":{
-           "cmd":"kong docker-start",
+           "cmd":"kong migrations bootstrap docker-start",
            "entrypoint":"/docker-entrypoint.sh",
            "env":{
               "DOCKER_EXPOSED_PORT":"80,443,8001,8444",
@@ -142,7 +142,6 @@
  },
   "onInstall":[
    "init",
-   "adjust-env-vars",
-   "initKong"
+   "adjust-env-vars"
    ]
 }
