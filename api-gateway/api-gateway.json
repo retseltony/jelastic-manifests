@@ -132,10 +132,12 @@
     }],
     "initKong":[
       {
-         "cmd [bl]": [
-            "kong migrations bootstrap",
-            "echo 'migrating kong'"
-         ]
+         "api [bl]": [{
+            "method": "environment.Control.SetContainerRunCmd",
+            "params":{
+               "data":"kong docker-start"
+            }
+         },"environment.control.RestartNodes"]
       }
     ]
     
