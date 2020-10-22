@@ -132,7 +132,7 @@
     }],
     "initKong":[
       {
-         "cmd [lb]": [
+         "cmd [bl]": [
             "kong migrations bootstrap",
             "echo 'migrating kong'"
          ]
