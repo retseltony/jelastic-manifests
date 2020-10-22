@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 KONGA_URL=$2
 KONG_URL=$1
 curl --location --request POST "http://$KONG_URL:8001/services" --header 'Content-Type: application/json' --data-raw "{\"url\":\"http://$KONGA_URL\",\"name\":\"KONGA-UI-KONG-MANAGER\"}"
