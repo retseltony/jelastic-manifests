@@ -130,7 +130,7 @@
     },{
       "api [cp, bl]": "environment.control.RestartNodes"
     }],
-    "initKong":[
+    "setCommandKong":[
       {
          "api [bl]": [{
             "method": "environment.Control.SetContainerRunCmd",
@@ -144,6 +144,7 @@
  },
   "onInstall":[
    "init",
-   "adjust-env-vars"
+   "adjust-env-vars",
+   "setCommandKong"
    ]
 }
