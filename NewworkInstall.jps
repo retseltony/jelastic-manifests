@@ -20,7 +20,7 @@ settings:
     required: true
     default: _json_key
   - name: reg_pass
-    caption:Registry password
+    caption: Registry password
     type: string
     inputType: password
     required: true
