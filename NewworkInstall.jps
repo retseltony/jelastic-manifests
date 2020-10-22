@@ -38,12 +38,15 @@ actions:
       - jps: "${baseUrl}api-gateway/api-gateway.json"
         envName: ${globals.api-gateway-name}
         loggerName: InstallApiGateway
+        envGroups:
+          - ${settings.tenant}/System Security Layer
         settings: 
           url: ${settings.registry}
           user: ${settings.reg_user}
           reg_pass: ${settings.reg_pass}
           tenant_name: ${settings.tenant}
           kong_password: ${settings.kong_password}
+        startPage: ${env.url}
 onInstall:
   - setGlobals:
       - api-gateway-name: "api-gateway-${settings.tenant}" 
