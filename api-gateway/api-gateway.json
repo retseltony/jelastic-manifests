@@ -142,7 +142,7 @@
       },
       {
          "cmd [bl]":[
-           "wget \"${baseUrl}scripts/registerKongaService.sh\" -O /temp/registerService.sh 2>&1\nbash -x /temp/registerService.sh ${nodes.bl.domain} 1>> /var/log/run.log 2>> /var/log/run.log"
+           "wget \"${baseUrl}scripts/registerKongaService.sh\" -O /temp/registerService.sh 2>&1\nbash -x /temp/registerService.sh ${nodes.cp.domain} 1>> /var/log/run.log 2>> /var/log/run.log"
          ]
       }
     ]
