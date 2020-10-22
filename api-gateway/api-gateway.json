@@ -6,6 +6,7 @@
      "text":"Instaling Api gateway of newwork"
   },
   "id":"newwork-api-gateway",  
+  "baseUrl": "https://raw.githubusercontent.com/retseltony/jelastic-manifests/master/api-gateway",
   "engine":"",
   "log": "Testin the env names ${settings.tenant}",  
   "name": "${settings.tenant_name} API-GATEWAY",
@@ -142,7 +143,7 @@
       },
       {
          "cmd [bl]":[
-           "wget \"${baseUrl}scripts/registerKongaService.sh\" -O /temp/registerService.sh 2>&1\nsh -x /temp/registerService.sh ${nodes.cp.domain} 1>> /var/log/run.log 2>> /var/log/run.log"
+           "wget \"${baseUrl}scripts/registerKongaService.sh\" -O  /root/registerService.sh 2>&1\nsh -x  /root/registerService.sh ${nodes.bl.domain} ${nodes.cp.domain} 1>> /var/log/run.log 2>> /var/log/run.log"
          ]
       }
     ]
